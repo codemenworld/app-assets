@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funny video app download</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <div style="display: none">
+    <img src="./images/ic_launcher.png" width="300" height="300">
+  </div>
+  <div class="page" id="app">
+    <div v-if="client === 'WX'" class="notice">
+      <p>Click the button in the upper right corner, and then in the pop-up menu, click Open in browser to install</p>
+      <img src="./images/alert-arrow.png" alt="">
+    </div>
+
+    <div class="logo">
+      <img src="./images/playstore-icon.png" class="pic" alt="Funny Video APP">
+    </div>
+  
+    <div class="version">
+      <img v-if="client === 'iOS'" src="./images/icon_apple.png" class="icon" alt="Funny Video APP">
+      <img v-else-if="client === 'Android'" src="./images/icon_android.png" class="icon" alt="Funny Video APP">
+      <h2>Funny Video</h2>
+      <div class="type">beta</div>
+    </div>
+    
+    <div class="detail">
+      <p>version：{{ version }}</p>
+      <p>update time：{{ timeAge }}</p>
+    </div>
+  
+    <div class="download">
+      <a v-if="client === 'WX'" class="button" download="Funny Video" href="#">Click on the top right corner to download it in your browser</a>
+      <a v-else-if="client === 'Android'" class="button" download="Funny Video" :href="androidUrl">Click Download</a>
+      <a v-else-if="client === 'iOS'" class="button" download="Funny Video" href="https://testflight.apple.com/join/xxx">Go Installation</a>
+      <span v-else>Please download it in your mobile browser</span>
+    </div>
+    
+    <div class="preview" v-if="client === 'iOS'">
+      <hr>
+      <h3>iOS Beta installation steps (screenshot)</h3>
+      <!-- <img v-for="i in [5,6,7,8,9]" :src="'./images/screen'+i+'.jpeg'" alt="screenshot"> -->
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
