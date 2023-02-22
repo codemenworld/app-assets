@@ -1,7 +1,7 @@
 var VersionInfo = {
   version: '1.0.1',
-  androidUrl: 'https://myfunnyvideo.com/1.apk',
-  releaseTime: 1674966622511,
+  androidUrl: 'https://myfunnyvideo.com/funnyVideo.apk',
+  releaseTime: 1677060168807,
 }
 
 var app = new Vue({
